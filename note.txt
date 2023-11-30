@@ -1,0 +1,20 @@
+GitHub  => New Project
+        => Repository name => Myanmar Currency
+        => choose public
+        => copy link
+Project Folder => .gitignore
+                    -> node_modules
+                    -> package_lock.json
+
+- git init
+- git status
+- git add .
+- git status
+- git commit -m "Project Startup"
+- git remote add origin https://github.com/...
+- git remote -v
+- git push -u origin master
+
+Note =>
+    - if you delete git on your Project 
+        -> rm -rf .git
