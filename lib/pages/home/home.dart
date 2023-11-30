@@ -12,6 +12,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  static Currency? data;
+
+  List<String> names = ["Mg Mg", "Su Su", "Ko Ko"];
+
+  get index => null;
   @override
   void initState() {
     super.initState();
@@ -19,17 +24,18 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  List<Currency> list = [];
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: const [
-        ListTile(
-          leading: InkWell(child: Icon(Icons.person)),
-          title: Text("Title"),
-          subtitle: Text("I am title"),
-          trailing: Icon(Icons.add),
-        ),
-      ]),
+      body: ListView.builder(
+          itemCount: data!.rate!.aud!.length,
+          itemBuilder: (context, index) =>
+              _getMyList(data!.rate!.aud?[index] ?? "")),
+    );
+  }
+
+  Widget _getMyList(name) {
+    return Card(
+      child: ListTile(leading: Icon(Icons.person), title: Text(name)),
     );
   }
 }

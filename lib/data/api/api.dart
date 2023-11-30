@@ -20,7 +20,7 @@ class Api {
       // var jsonResponse = convert.jsonDecode(response.body);
 
       Currency data = Currency.fromJson(decodeData);
-      print(data);
+      print(data.runtimeType);
       print(data.rate);
     } else {
       print('Request failed with status: ${response.statusCode}.');
